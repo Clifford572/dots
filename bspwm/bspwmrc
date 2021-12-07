@@ -1,0 +1,32 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
+bspc monitor eDP -d 1 2 3 4 5 6 7 8 9
+
+bspc config border_width         0
+bspc config window_gap          8
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+wmname LG3D &
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^6'
+bspc rule -a discord desktop='^3'
+bspc rule -a Steam desktop='^4'
+bspc rule -a Emacs state=tiled
+bspc rule -a android-studio state=floating border=off follow=on
+bspc rule -a Screenkey manage=off
+setxkbmap -option caps:escape &
+
+picom &
+feh --bg-fill ~/Pictures/Wallpapers/ismail-inceoglu-chaos-invoked.jpg
+$HOME/.config/polybar/launch.sh
+# tint2 &
+xinput set-prop 12 "Device Enabled" 0
+if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]];then
+    xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rotate normal --output eDP --off
+fi

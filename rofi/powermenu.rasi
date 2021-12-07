@@ -1,0 +1,64 @@
+configuration {
+    	disable-history:                false;
+	sidebar-mode:			false;
+}
+
+@theme "/dev/null"
+
+element-text, element-icon {
+    	background-color: 		inherit;
+    	text-color:       		inherit;
+}
+
+* {
+    	bg:				#151515;
+    	fg:                    		#e8e8d3;
+    	button:				#1c1c1c;
+    	accent:				#687363;
+
+    	background-color:           	@bg;
+    	text-color:                 	@fg;
+}
+
+window {
+    	transparency:                   "real";
+    	border-radius:                  8px;
+    	location:                       south west;
+    	x-offset:                       88px;
+    	y-offset:                       -32px;
+    	width:                          90px;
+}
+
+listview {
+    	columns:                        1;
+    	lines:                          5;
+    	margin:                         5px;
+    	spacing:                        5px;
+    	cycle:                          false;
+    	layout:                         vertical;
+    	dynamic: true;
+}
+
+mainbox {
+    	children:                       [ listview ];
+}
+
+element {
+    	background-color:               @button;
+    	orientation:                    vertical;
+    	border-radius:                  7px;
+}
+
+element-text {
+    	font:			    	"Feather 20";
+    	expand:                         false;
+    	horizontal-align:               0.5;
+    	vertical-align:		    	1;
+    	margin:                         2px 20px 25px 20px;
+}
+
+element selected {
+    	background-color:               @accent;
+    	text-color:                     @bg;
+    	border-radius:                  7px;
+}

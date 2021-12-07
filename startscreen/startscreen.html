@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="startscreen.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="items">
+      <div class="searchbar">
+        <form
+          id="search_eng_form"
+          method="get"
+          action="https://www.duckduckgo.com/"
+        >
+          <button><img src="icons/ddg.svg" class="icon" alt="" /></button>
+          <input
+            type="search"
+            id="search"
+            placeholder="Searching with DuckDuckGo"
+            autocomplete="off"
+            name="q"
+            autofocus
+          /><button type="submit" class="go" id="go_btn">
+            <img src="icons/search.svg" alt="" />
+          </button>
+        </form>
+      </div>
+      <div class="cards">
+        <a href="https://github.com" target="_blank">
+          <div class="link">
+            <img src="icons/github.svg" class="icons" alt="" />
+          </div>
+        </a>
+        <a href="https://discord.com" target="_blank">
+          <div class="link">
+            <img src="icons/discord.svg" class="icons" alt="" />
+          </div>
+        </a>
+        <a href="https://gmail.com" target="_blank">
+          <div class="link">
+            <img src="icons/mail.svg" class="icons" alt="" />
+          </div>
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+          <div class="link">
+            <img src="icons/youtube.svg" class="icons" alt="" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
